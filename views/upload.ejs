@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=0" />
+<title>Kavya-Memepage</title>
+<meta name="description" content="" />
+<meta itemprop="description" content="" />
+<meta itemprop="image" content="URL_OF_DEPLOYMENT/branding/" />
+<meta property="og:url" content="URL_OF_DEPLOYMENT" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="kavya-memepage" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="URL_OF_DEPLOYMENT/branding/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="kavya-memepage" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="URL_OF_DEPLOYMENT/branding/" />
+
+<body>
+    <div class="loader">
+        <div class="loader-main"></div>
+    </div>
+    <div class="main-title">
+        <div class="e1">
+            <img src="/favicon.ico" alt="img" class="main-image" draggable="false">
+            <h1 class="main-text">Upload your meme</h1>
+        </div>
+    </div>
+    <div class="container">
+        <form method="post" action="/upload" enctype="multipart/form-data">
+            <input id="meme-post" onchange="checkFileFormat()" type="file" accept="image/*" name="meme-post"
+                required="true" />
+            <div class="submit-main">
+                <button type="submit" id="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="assets/js/main.js" defer></script>
+</body>
+
+</html>
