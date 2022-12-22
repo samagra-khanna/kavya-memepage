@@ -20,17 +20,20 @@
 <meta name="twitter:description" content="" />
 <meta name="twitter:image" content="URL_OF_DEPLOYMENT/branding/" />
 
-<body>
+<body draggable="false">
     <div class="loader">
         <div class="loader-main"></div>
     </div>
-    <div class="main-title"><img src="/favicon.ico" alt="img" class="main-image" draggable="false">
-        <h1 class="main-text">Kavya Memepage</h1>
+    <div class="main-title">
+        <div class="main-logo">
+            <img src="/favicon.ico" alt="img" class="main-image" draggable="false">
+            <h4 class="main-text">Kavya Memepage</h4>
+        </div>
+        <a href="/upload" class="main-upload"><span class="material-symbols-outlined">
+                add_photo_alternate
+            </span></a>
     </div>
-    <div class="upload-container">
-        <a href="/upload" class="main-upload">Upload Meme</a>
-    </div>
-    <div class="in-div">
+    <div class="images">
         <% if(data.length){ for(var i=0; i< data.length; i++) {%>
             <div id="main" style="margin-top: 30px;">
                 <img id="image" width="300" src="images/<%= data[i].filename%>" />
