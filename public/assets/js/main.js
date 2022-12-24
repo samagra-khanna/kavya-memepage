@@ -6,6 +6,15 @@ function checkFileFormat() {
         window.location.reload();
     }
 }
+
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+    loader.classList.add("loader-hidden");
+    loader.addEventListener("transitionend", () => {
+        loader.style.display = "none";
+    });
+});
+
 const form = document.querySelector('form');
 
 $("#meme-post").bind('change', function () {

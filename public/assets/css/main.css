@@ -31,6 +31,46 @@ body {
     background: #ffffff;
 }
 
+.loader {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #000000;
+    transition: opacity 0.75s, visibility 0.75s;
+    margin-top: -30px;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader .loader-main {
+    height: 75px;
+    width: 75px;
+    border: 5px solid #ffffff;
+    border-top-color: #000000;
+    border-radius: 50%;
+    animation: 2s rotation infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0turn);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
 .main-title {
     display: flex;
     flex-direction: row;
