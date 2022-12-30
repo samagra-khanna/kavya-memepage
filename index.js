@@ -16,12 +16,12 @@ const routes = require('./routes/routes');
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true, limit: '50mb', parameterLimit: 500000 }));
-app.use(express.json({ limit: '50mb' }));
-app.use(express.text({ limit: '200mb' }));
-app.use(bodyParser.json({ limit: "50mb" }));
-app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 500000 }));
-app.use(bodyParser.text({ limit: '200mb' }));
+app.use(express.urlencoded({ extended: true, limit: '5000mb', parameterLimit: 50000000 }));
+app.use(express.json({ limit: '5000mb' }));
+app.use(express.text({ limit: '2000mb' }));
+app.use(bodyParser.json({ limit: "5000mb" }));
+app.use(bodyParser.urlencoded({ limit: "5000mb", extended: true, parameterLimit: 50000000 }));
+app.use(bodyParser.text({ limit: '2000mb' }));
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
