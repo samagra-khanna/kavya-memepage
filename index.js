@@ -16,6 +16,9 @@ const routes = require('./routes/routes');
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '50mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
+app.use(bodyParser.text({ limit: '200mb' }));
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
