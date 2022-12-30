@@ -48,9 +48,12 @@
                     <i class="far fa-check-circle text-success"></i>
                 </span>
             </button>
-            <form method="post" action="/upload" enctype="multipart/form-data">
+            <form>
                 <input id="meme-post" onchange="checkFileFormat()" type="file" accept="image/*" name="meme-post"
                     required="true" />
+            </form>
+            <form method="post" action="/upload" class="form1" style="display: none;">
+                <input type="text" id="main-post" name="mainpost" />
             </form>
         </div>
     </div>

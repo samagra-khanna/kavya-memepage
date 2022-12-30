@@ -37,7 +37,7 @@
         <div class="images">
             <% if(data.length){ for(var i=0; i< data.length; i++) {%>
                 <div id="main" style="margin-top: 30px;">
-                    <img id="image" width="300" src="images/<%= data[i].filename%>" />
+                    <img id="image" width="300" src="<%= data[i].file%>" />
                 </div>
                 <% } }else{ %>
                     <% } %>

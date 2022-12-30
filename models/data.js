@@ -2,9 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const memeSchema = new Schema({
-    filename: {
+    file: {
         type: String,
-        unique: true
     }
 });
 

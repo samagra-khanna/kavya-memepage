@@ -15,8 +15,6 @@ window.addEventListener("load", () => {
     });
 });
 
-const form = document.querySelector('form');
-
 $("#meme-post").bind('change', function () {
     var filename = $("#meme-post").val();
     if (/^s*$/.test(filename)) {
@@ -25,6 +23,20 @@ $("#meme-post").bind('change', function () {
     } else {
         $("#blankFile").text(filename.replace("C:\\fakepath\\", ""));
         $(".success").show();
-        $(form).submit();
     }
-}); 
+});
+
+const form1 = document.querySelector('.form1');
+
+const meme_post = document.querySelector('#meme-post');
+const main_post = document.querySelector('#main-post');
+
+meme_post.addEventListener('change', e => {
+    const file = meme_post.files[0];
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+        main_post.value = reader.result;
+        form1.submit();
+    });
+    reader.readAsDataURL(file);
+});
