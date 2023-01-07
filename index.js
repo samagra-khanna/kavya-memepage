@@ -14,10 +14,6 @@ const MongoDBSession = require('connect-mongodb-session')(express_session);
 const bodyParser = require('body-parser');
 
 const app = express();
-
-const server = http.createServer(app);
-server.listen(PORT);
-
 mongoose.set('strictQuery', false);
 
 const routes = require('./routes/routes');
@@ -32,9 +28,13 @@ app.use(bodyParser.text({ limit: '2000mb' }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
-mongoose.connect(DBURI)
-    .then((result) => console.log("Database is connected..."))
-    .catch((err) => console.error(err));
+mongoose.connect(DB_URI)
+    .then((result) => {
+        console.log("Database is connected...")
+        http.createServer(app).listen(PORT, () => {
+            console.log("Server is listening on port " + PORT + '...');
+     });
+}).catch((err) => console.error(err));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
