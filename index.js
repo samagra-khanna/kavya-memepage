@@ -28,7 +28,7 @@ app.use(bodyParser.text({ limit: '2000mb' }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
-mongoose.connect(DB_URI)
+mongoose.connect(DBURI)
     .then((result) => {
         console.log("Database is connected...")
         http.createServer(app).listen(PORT, () => {
