@@ -9,6 +9,8 @@ const express_session = require('express-session');
 const express_flash = require('express-flash');
 const MongoDBSession = require('connect-mongodb-session')(express_session);
 const bodyParser = require('body-parser');
+const server = http.createServer(app);
+server.listen(PORT);
 
 mongoose.set('strictQuery', false);
 
@@ -50,10 +52,6 @@ app.use(express_session({
 }));
 
 app.use(express_flash());
-
-const server = http.createServer(app);
-
-server.listen(PORT);
 app.use(routes);
 
 app.get('*', function (req, res) {
