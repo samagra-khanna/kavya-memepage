@@ -1,6 +1,9 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+const PORT = process.env.PORT || 3000;
+const DBURI = process.env.DBURI;
+
 const http = require('http');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -29,8 +32,6 @@ app.use(bodyParser.text({ limit: '2000mb' }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
-const PORT = process.env.PORT || 3000;
-const DBURI = process.env.DBURI;
 mongoose.connect(DBURI)
     .then((result) => console.log("Database is connected..."))
     .catch((err) => console.error(err));
