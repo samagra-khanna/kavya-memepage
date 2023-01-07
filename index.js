@@ -9,14 +9,15 @@ const express_session = require('express-session');
 const express_flash = require('express-flash');
 const MongoDBSession = require('connect-mongodb-session')(express_session);
 const bodyParser = require('body-parser');
+
+const app = express();
+
 const server = http.createServer(app);
 server.listen(PORT);
 
 mongoose.set('strictQuery', false);
 
 const routes = require('./routes/routes');
-
-const app = express();
 
 app.use(express.urlencoded({ extended: true, limit: '5000mb', parameterLimit: 50000000 }));
 app.use(express.json({ limit: '5000mb' }));
